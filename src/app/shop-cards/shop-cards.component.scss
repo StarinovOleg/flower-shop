@@ -1,0 +1,32 @@
+.shop-section{
+  .shop-title{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Gotham Pro",Arial sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #7a868c;
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+    margin-top: 1%;
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+  }
+  .example-card{
+    margin-bottom: 30px;
+    .shop-card{
+      text-align: center;
+      text-transform: uppercase;
+      min-height: min-content;
+      font-family: Montserrat,Arial,sans-serif;
+      font-size: 13px;
+      font-weight: 400 !important;
+      letter-spacing: 1px;
+      color: #272727;
+      display: block;
+      line-height: 1.6;
+    }
+  }
+
+}
+
