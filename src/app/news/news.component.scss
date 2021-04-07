@@ -1,0 +1,26 @@
+.news-block {
+    background-color:#FBF7F8;
+    max-height: 300px;
+    height: 200px;
+    border: 1px solid #FAEDF0;
+
+}
+.news-item {
+    border-bottom: 1px solid #a40001;
+    p {
+        padding:10px;
+        font-size: 1.25rem;
+        font-family: "Gotham Pro",Arial sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #7a868c;
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+     }
+}
+.fas{
+    color:yellow;
+}
+.news-testimonial{
+    padding:10px;
+}

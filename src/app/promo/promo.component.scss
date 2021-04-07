@@ -1,0 +1,35 @@
+.bg-image {
+    background-image: url('../../assets/image/boquet.jpg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    height: 400px;
+    
+}
+.promo-button {
+    margin-top: 10%;
+    color: #a40001;
+    border-color: #a40001;
+    background-color: #FCEFF3;
+}
+.promo_delivery {
+    border-bottom: 1px solid #a40001;
+    h2{
+      color: #a40001;  
+      text-transform: uppercase;
+      font-family: "Gotham Pro",Arial sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      text-rendering: optimizeLegibility;
+      line-height: 1.4;
+      margin-top: 1%;
+      margin-bottom: .5rem;
+      font-size: 1.3rem;
+     @media screen and(max-width: 411px){
+        font-size: 14px;
+      }
+    }
+    .fas {
+        color: #a40001;  
+    }
+}

@@ -1,16 +1,30 @@
+.navbar-color{
+  background: #fff;
+  color: #fff;
+}
 .navbar-brand {
   transform: translateX(-50%);
-  left: 50%;
+  left: 55%;
   position: absolute;
 }
-
-
-/* DEMO example styles for logo image */
 .navbar-brand {
   padding: 0px;
 }
 .navbar-brand>img {
   height: 100%;
-  width: auto;
+  width: 70%;
   padding: 7px 14px;
+}
+.nav-link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  font-size: 30px;
+  text-align: center;
+}
+.nav-item {
+  padding-left: 20px;
+}
+.fas{
+  color: #a40001;
 }

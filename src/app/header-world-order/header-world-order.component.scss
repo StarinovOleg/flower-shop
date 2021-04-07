@@ -1,0 +1,30 @@
+.navbar-color{
+    border-top: 3px solid #a40001;
+    border-bottom: 1px solid #a40001;
+    color: #fff;
+  }
+  .navbar-brand {
+    transform: translateX(-50%);
+
+    padding: 0px;
+    .navbar-brand_title{
+      font-size: 14px;  
+      padding: 7px 14px;
+    }
+  }
+  .navbar-brand>img {
+    height: 100%;
+    width: auto;
+    padding: 7px 14px;
+  }
+  .nav-link {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+  }
+  .nav-item {
+    padding-left: 20px;
+  }
+  .fas{
+      color: #a40001
+  }

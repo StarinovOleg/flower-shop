@@ -9,7 +9,10 @@ import { PromoComponent } from './promo/promo.component';
 import { ShopCardsComponent } from './shop-cards/shop-cards.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatCardModule} from '@angular/material/card';
-
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatIconModule} from '@angular/material/icon';
+import { HeaderWorldOrderComponent } from './header-world-order/header-world-order.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +21,19 @@ import {MatCardModule} from '@angular/material/card';
     PromoComponent,
     ShopCardsComponent,
     FooterComponent,
+    HeaderWorldOrderComponent,
+    NewsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    //FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
