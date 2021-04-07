@@ -25,6 +25,18 @@
 .nav-item {
   padding-left: 20px;
 }
-.fas{
+.nav-link:last-child{
+  color: #a40001;
+  line-height: 1.5rem;
+  .fas{
+    display: contents;
+  }
+  i,.fas:hover{
+    color: #a40001;
+  }
+}
+.fas {
   color: #a40001;
 }
+
+
