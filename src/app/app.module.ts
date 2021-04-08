@@ -13,7 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { HeaderWorldOrderComponent } from './header-world-order/header-world-order.component';
 import { NewsComponent } from './news/news.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +32,7 @@ import { NewsComponent } from './news/news.component';
     MatCardModule,
     MatIconModule,
     //FontAwesomeModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

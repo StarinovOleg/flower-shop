@@ -17,22 +17,66 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="news-slider">
-                        <img src="/assets/image/slider.jpeg" alt="image" style="width:100%">
+                        <ngb-carousel
+                        [showNavigationArrows]="false" 
+                        [showNavigationIndicators]="false"
+                        
+                        >
+                            <ng-template ngbSlide>
+                              <div class="picsum-img-wrapper">
+                                <img src="/assets/image/slider.jpeg" alt="Angular Carousel 1" style="width:100%">
+                              </div>
+                            </ng-template>
+                            <ng-template ngbSlide>
+                              <div class="picsum-img-wrapper">
+                                <img src="/assets/image/slider.jpeg" alt="Angular Carousel 1" style="width:100%">
+                              </div>
+                            </ng-template>
+                          </ngb-carousel>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="news-block">
                         <div class="news-testimonial" >
-                            <div class="title"><strong> Helen, Ha Noi</strong> </div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="description">
-                                <i><strong>"</strong>I often use Mai to send flowers to friends and loved ones. Their prices are good their flowers excellent and I have never had an issue with delivery I will continue to use them, above other options for my flower delivery.<strong>"</strong></i>
+                            <div class="news-slider">
+                                <ngb-carousel
+                                [showNavigationArrows]="false" 
+                                [showNavigationIndicators]="false"
+                                [interval]="12000"
+                                [keyboard]="true"
+                                >
+                                    <ng-template ngbSlide>
+                                      <div class="picsum-img-wrapper">
+                                        <div class="title"><strong> Helen, Ha Noi</strong> </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="description">
+                                            <i><strong>"</strong>I often use Mai to send flowers to friends and loved ones. Their prices are good their flowers excellent and I have never had an issue with delivery I will continue to use them, above other options for my flower delivery.<strong>"</strong></i>
+                                        </div>
+
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ngbSlide>
+                                      <div class="picsum-img-wrapper">
+                                        <div class="title"><strong> Helen, Ha Noi</strong> </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="description">
+                                            <i><strong>"</strong>I often use Mai to send flowers to friends and loved ones. Their prices are good their flowers excellent and I have never had an issue with delivery I will continue to use them, above other options for my flower delivery.<strong>"</strong></i>
+                                        </div>
+                                      </div>
+                                    </ng-template>
+                                  </ngb-carousel>
                             </div>
                         </div>
                     </div>
