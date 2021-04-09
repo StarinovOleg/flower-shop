@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { HeaderWorldOrderComponent } from './header-world-order/header-world-order.component';
 import { NewsComponent } from './news/news.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     HeaderWorldOrderComponent,
     NewsComponent,
+    ProductDetailsComponent,
 
   ],
   imports: [
@@ -32,7 +34,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatIconModule,
     //FontAwesomeModule
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot([
+      { path: '', component: ShopCardsComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

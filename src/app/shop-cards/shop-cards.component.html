@@ -2,63 +2,19 @@
   <div class="container-fluid">
     <h2 class="shop-title">Most popular flowers in flowerbank</h2>
     <div class="row">
-      <div class="col-12 col-lg-12 tex-center">
+      <div class="col-12 col-lg-3 col-md-6 classic" *ngFor="let product of products; index as productId" style="text-align: center;">
+
           <mat-card class="example-card">
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <a [title]="product.image" [routerLink]="['/products, productId']">
+            <img mat-card-image src="{{product.image}}" alt="photo flowers">
+        </a>
             <mat-card-content>
-              <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-              <p class="shop-card_title shop-card"><i>(Rose)</i></p>
+              <p class="shop-card_price shop-card"><strong>{{ product.price}}</strong></p>
+              <p class="shop-card_title shop-card"><i>{{ product.description}}</i></p>
             </mat-card-content>
-          </mat-card>
-        <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-            <p class="shop-card_title shop-card"><i>(Rose)</i></p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-            <p class="shop-card_title shop-card"><i>(Rose)</i></p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-            <p class="shop-card_title shop-card"><i>(Rose)</i></p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-            <p class="shop-card_title shop-card"><i>(Rose)</i></p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-            <p class="shop-card_title shop-card"><i>(Rose)</i></p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-            <p class="shop-card_title shop-card"><i>(Rose)</i></p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p class="shop-card_price shop-card"><strong>100 000 d</strong></p>
-            <p class="shop-card_title shop-card"><i>(Rose)</i></p>
-          </mat-card-content>
-        </mat-card>
+          </mat-card>          
+
+
       </div>
     </div>
   </div>

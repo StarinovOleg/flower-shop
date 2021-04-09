@@ -11,12 +11,17 @@
     margin-top: 1%;
     margin-bottom: .5rem;
     font-size: 1.3rem;
+  }     
+  @media screen and(min-width:991px)and(max-width:1342px) {
+    .classic {
+      display:flex;
+    }
   }
     .example-card {
       margin-bottom: 30px;
-      margin-left: 30px;
       width: 300px;
       display: inline-block;
+
       .shop-card {
         text-align: center;
         text-transform: uppercase;
