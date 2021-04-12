@@ -36,11 +36,17 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     //FontAwesomeModule
     NgbModule,
     RouterModule.forRoot([
-      { path: '', component: ShopCardsComponent },
-      { path: 'products/:productId', component: ProductDetailsComponent },
+      {path: 'shop-cards', component: ShopCardsComponent}, 
+      {path: 'news', component: NewsComponent}, 
+      //{path: 'product-details', component: ProductDetailsComponent}, 
+      { path: 'products/:id', component: ProductDetailsComponent },
+      {path: '', redirectTo: '/shop-cards', pathMatch: 'full'}, 
+    
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  
+}
