@@ -9,7 +9,6 @@ import { PromoComponent } from './promo/promo.component';
 import { ShopCardsComponent } from './shop-cards/shop-cards.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatCardModule} from '@angular/material/card';
-//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatIconModule} from '@angular/material/icon';
 import { HeaderWorldOrderComponent } from './header-world-order/header-world-order.component';
 import { NewsComponent } from './news/news.component';
@@ -33,20 +32,18 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     BrowserAnimationsModule,
     MatCardModule,
     MatIconModule,
-    //FontAwesomeModule
     NgbModule,
     RouterModule.forRoot([
-      {path: 'shop-cards', component: ShopCardsComponent}, 
-      {path: 'news', component: NewsComponent}, 
-      //{path: 'product-details', component: ProductDetailsComponent}, 
+      { path: 'shop-cards', component: ShopCardsComponent},
+      { path: 'news', component: NewsComponent},
       { path: 'products/:id', component: ProductDetailsComponent },
-      {path: '', redirectTo: '/shop-cards', pathMatch: 'full'}, 
-    
+      { path: '', redirectTo: '/shop-cards', pathMatch: 'full'},
     ])
   ],
+  exports:[RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
 }
