@@ -3,33 +3,21 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4 col-12">
-                    <div class="news-block">
-                        <div class="news-item">
-                            <p>30% sale</p>
-                        </div>
-                        <div class="news-item">
-                            <p>Birthday Flowers and Gifts</p>
-                        </div>
-                        <div class="news-item">
-                            <p>Delivery same day</p>
+                    <div class="news-block" >
+                        <div class="news-item" *ngFor="let items of items;">
+                            <p>{{ items.description}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="news-slider">
                         <ngb-carousel
-                        [showNavigationArrows]="false" 
+                        [showNavigationArrows]="false"
                         [showNavigationIndicators]="false"
-                        
                         >
-                            <ng-template ngbSlide>
+                            <ng-template ngbSlide *ngFor="let sliders of sliders;">
                               <div class="picsum-img-wrapper">
-                                <img src="/assets/image/slider.jpeg" alt="Angular Carousel 1" style="width:100%">
-                              </div>
-                            </ng-template>
-                            <ng-template ngbSlide>
-                              <div class="picsum-img-wrapper">
-                                <img src="/assets/image/slider.jpeg" alt="Angular Carousel 1" style="width:100%">
+                                <img src="{{sliders.image}}" alt="Angular Carousel 1" style="width:100%">
                               </div>
                             </ng-template>
                           </ngb-carousel>
@@ -40,14 +28,14 @@
                         <div class="news-testimonial" >
                             <div class="news-slider">
                                 <ngb-carousel
-                                [showNavigationArrows]="false" 
+                                [showNavigationArrows]="false"
                                 [showNavigationIndicators]="false"
                                 [interval]="12000"
                                 [keyboard]="true"
                                 >
-                                    <ng-template ngbSlide>
-                                      <div class="picsum-img-wrapper">
-                                        <div class="title"><strong> Helen, Ha Noi</strong> </div>
+                                    <ng-template ngbSlide *ngFor="let reviews of reviews;">
+                                      <div class="picsum-img-wrapper" >
+                                        <div class="title"><strong>{{reviews.title}}</strong> </div>
                                         <div class="stars">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -56,23 +44,7 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <div class="description">
-                                            <i><strong>"</strong>I often use Mai to send flowers to friends and loved ones. Their prices are good their flowers excellent and I have never had an issue with delivery I will continue to use them, above other options for my flower delivery.<strong>"</strong></i>
-                                        </div>
-
-                                        </div>
-                                    </ng-template>
-                                    <ng-template ngbSlide>
-                                      <div class="picsum-img-wrapper">
-                                        <div class="title"><strong> Helen, Ha Noi</strong> </div>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="description">
-                                            <i><strong>"</strong>I often use Mai to send flowers to friends and loved ones. Their prices are good their flowers excellent and I have never had an issue with delivery I will continue to use them, above other options for my flower delivery.<strong>"</strong></i>
+                                            <i>"{{reviews.description}}"</i>
                                         </div>
                                       </div>
                                     </ng-template>
