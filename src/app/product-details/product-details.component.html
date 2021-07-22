@@ -2,20 +2,42 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-3 col-lg-3">
-        <img class="product-img" *ngIf="product"  src="{{product.image}}" alt="photo flowers">
+        <img
+          class="product-img"
+          *ngIf="product"
+          src="{{ product.image }}"
+          alt="photo flowers"
+        />
       </div>
       <div class="col-9 col-lg-9">
-        <div class="product-name"*ngIf="product">{{ product.name }}</div>
-        <div class="product-description"*ngIf="product">{{ product.description }}</div>
-        <div class="product-price"*ngIf="product">Price: {{ product.price }} D</div>
+        <div class="product-name" *ngIf="product">{{ product.name }}</div>
+        <div class="product-description" *ngIf="product">
+          {{ product.description }}
+        </div>
+        <div class="product-price" *ngIf="product">
+          Price: {{ product.price }} D
+        </div>
         <div class="product-button">
-          <input id="add-to-cart-button" name="submit.add-to-cart" title="Add to Shopping Cart"  class="a-button-input attach-dss-atc" type="button" value="Add to Cart" aria-labelledby="submit.add-to-cart-announce">
-          <input id="buy-now-button" name="submit.buy-now" title="Buy now" class="a-button-input" type="submit" value="Buy now" aria-labelledby="submit.buy-now-announce">
+          <input
+            id="add-to-cart-button"
+            name="submit.add-to-cart"
+            title="Add to Shopping Cart"
+            class="btn btn-secondary a-button-input attach-dss-atc"
+            type="button"
+            value="Add to Cart"
+            aria-labelledby="submit.add-to-cart-announce"
+          />
+          <input
+            id="buy-now-button"
+            name="submit.buy-now"
+            title="Buy now"
+            class="btn btn-secondary a-button-input"
+            type="submit"
+            value="Buy now"
+            aria-labelledby="submit.buy-now-announce"
+          />
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

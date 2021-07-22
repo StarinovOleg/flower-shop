@@ -4,16 +4,24 @@
   <div class="container-fluid">
     <h2 class="shop-title">Most popular flowers in flowerbank</h2>
     <div class="row">
-      <div class="col-12 col-lg-3 col-md-6 classic" *ngFor="let product of products; index as id" style="text-align: center;">
-          <a [routerLink]="['/products', id]" routerLinkActive="activebutton" >
+      <div
+        class="col-12 col-lg-3 col-md-6 classic"
+        *ngFor="let product of products; index as id"
+        style="text-align: center"
+      >
+        <a [routerLink]="['/products', id]" routerLinkActive="activebutton">
           <mat-card class="example-card">
-            <img mat-card-image src="{{product.image}}" alt="photo flowers">
+            <img mat-card-image src="{{ product.image }}" alt="photo flowers" />
             <mat-card-content>
-              <p class="shop-card_price shop-card"><strong>{{ product.price}}</strong></p>
-              <p class="shop-card_title shop-card"><i>{{ product.description}}</i></p>
+              <p class="shop-card_price shop-card">
+                <strong>{{ product.price }}</strong>
+              </p>
+              <p class="shop-card_title shop-card">
+                <i>{{ product.description }}</i>
+              </p>
             </mat-card-content>
           </mat-card>
-          </a>
+        </a>
       </div>
     </div>
   </div>

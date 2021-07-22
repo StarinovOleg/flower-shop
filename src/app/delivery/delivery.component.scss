@@ -1,0 +1,30 @@
+.delivery {
+  margin-bottom: 10%;
+
+  .delivery-name {
+    color: #a40001;
+    font-size: 30px;
+    margin-top: 2%;
+  }
+  .delivery-body {
+    display: inline-block;
+    margin-top: 2%;
+    .delivery-card {
+      border-style: solid;
+      border-radius: 20px;
+      border-color: #a40001;
+      padding: 2%;
+      .delivery-icon {
+        font-size: 10rem;
+        color: #a40001;
+      }
+      .delivery-text-title {
+        margin-top: 2%;
+        color: #a40001;
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

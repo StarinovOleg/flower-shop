@@ -1,0 +1,25 @@
+.cart {
+  margin-bottom: 10%;
+  .cart-name {
+    color: #a40001;
+    font-size: 30px;
+    margin-top: 2%;
+  }
+  .cart-table {
+    .table {
+      color: #a40001;
+      img {
+        width: 50px;
+      }
+      button {
+        color: #a40001;
+      }
+      .cart-price {
+        font-size: 1rem;
+      }
+      .line-height {
+        line-height: 2.5;
+      }
+    }
+  }
+}
