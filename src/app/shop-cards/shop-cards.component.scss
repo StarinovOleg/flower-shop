@@ -18,10 +18,9 @@
     }
   }
     .example-card {
-      margin-bottom: 30px;
       width: 300px;
       display: inline-block;
-
+      height:100%;
       .shop-card {
         text-align: center;
         text-transform: uppercase;
@@ -38,6 +37,9 @@
       .shop-card_price {
         border-bottom: 1px solid #a40001;
       }
+    }
+    .classic{
+      margin-bottom:30px;
     }
 
 }

@@ -46,7 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([
       { path: 'shop-cards', component: ShopCardsComponent },
       { path: 'news', component: NewsComponent },
-      { path: 'products/:id', component: ProductDetailsComponent },
+      { path: 'product/:id', component: ProductDetailsComponent },
       { path: '', redirectTo: '/shop-cards', pathMatch: 'full' },
       { path: 'delivery', component: DeliveryComponent },
       { path: 'coming-soon', component: ComingSoonComponent },

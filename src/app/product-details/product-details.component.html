@@ -1,20 +1,19 @@
 <div class="product-details">
-  <div class="container-fluid">
-    <div class="row">
+  <div class="container-fluid" *ngIf='product'>
+    <div class="row" >
       <div class="col-3 col-lg-3">
         <img
           class="product-img"
-          *ngIf="product"
           src="{{ product.image }}"
           alt="photo flowers"
         />
       </div>
       <div class="col-9 col-lg-9">
-        <div class="product-name" *ngIf="product">{{ product.name }}</div>
-        <div class="product-description" *ngIf="product">
+        <div class="product-name" >{{ product.name }}</div>
+        <div class="product-description" >
           {{ product.description }}
         </div>
-        <div class="product-price" *ngIf="product">
+        <div class="product-price" >
           Price: {{ product.price }} D
         </div>
         <div class="product-button">

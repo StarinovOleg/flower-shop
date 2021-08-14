@@ -3,6 +3,30 @@
 <section class="shop-section">
   <div class="container-fluid">
     <h2 class="shop-title">Most popular flowers in flowerbank</h2>
+    <!--DATA BASE CONNECT-->
+    <div class="row">
+      <div
+        class="col-12 col-lg-3 col-md-6 classic"
+        *ngFor="let product of product"
+        style="text-align: center"
+      >
+        <a routerLink="/product/{{product.id}}" routerLinkActive="activebutton">
+          <mat-card class="example-card">
+            <img mat-card-image src="{{ product.image }}" alt="photo flowers" />
+            <mat-card-content>
+              <p class="shop-card_price shop-card">
+                <strong>{{ product.price }}</strong>
+              </p>
+              <p class="shop-card_title shop-card">
+                <i>{{ product.description }}</i>
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </a>
+      </div>
+    </div>
+    <!--No DATA BASE CONNECT-->
+    <!--
     <div class="row">
       <div
         class="col-12 col-lg-3 col-md-6 classic"
@@ -24,5 +48,6 @@
         </a>
       </div>
     </div>
+  -->
   </div>
 </section>
