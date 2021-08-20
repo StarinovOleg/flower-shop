@@ -9,7 +9,7 @@ import { Product } from '../services/product';
 })
 export class CartComponent implements OnInit {
   items=this.CartService.getItems();
-  
+
   constructor(
     private CartService: CartService,
   ) { }
@@ -19,6 +19,6 @@ export class CartComponent implements OnInit {
   }
   clearCart(item: Product) {
     this.CartService.clearCart();
-    //window.alert('Flower has been added tp the cart')
   }
+  
 }

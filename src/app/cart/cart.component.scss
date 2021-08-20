@@ -1,9 +1,13 @@
 .cart {
-  margin-bottom: 10%;
+  margin-bottom: 25%;
   .cart-name {
     color: #a40001;
     font-size: 30px;
     margin-top: 2%;
+  }
+  .a-button-input {
+    margin: 1%;
+    background-color: #a40001;
   }
   .cart-table {
     .table {
@@ -21,5 +25,8 @@
         line-height: 2.5;
       }
     }
+  }
+  .cart-form{
+    color: #a40001;
   }
 }
