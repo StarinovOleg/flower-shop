@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-lg-12 col-12">
         <div class="cart-table">
-          <table class="table">
+          <table class="table" *ngFor="let item of items; let i=index">
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -22,19 +22,16 @@
             <tbody>
               <tr>
                 <td>
-                  <img src="/assets/image/flowers/1.jpeg" alt="image" />
+                  <img src="{{ item.image }}" alt="image" />
                 </td>
                 <td class="line-height">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                  numquam doloremque exercitationem atque nisi laudantium
-                  officiis, obcaecati voluptatibus ipsa iure vel voluptate, sed
-                  ducimus! Pariatur atque rem sequi provident hic.
+                 {{item.description}}
                 </td>
                 <td class="line-height">
-                  <span class="cart-price"><strong>100000</strong></span>
+                  <span class="cart-price"><strong>{{item.price | currency}}</strong></span>
                 </td>
                 <td>
-                  <button class="btn">
+                  <button class="btn"  (click)="clearCart(item)" >
                     <i class="fas fa-minus-circle"></i>
                   </button>
                 </td>

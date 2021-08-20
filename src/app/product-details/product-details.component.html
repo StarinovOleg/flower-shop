@@ -18,15 +18,6 @@
         </div>
         <div class="product-button">
           <input
-            id="add-to-cart-button"
-            name="submit.add-to-cart"
-            title="Add to Shopping Cart"
-            class="btn btn-secondary a-button-input attach-dss-atc"
-            type="button"
-            value="Add to Cart"
-            aria-labelledby="submit.add-to-cart-announce"
-          />
-          <input
             id="buy-now-button"
             name="submit.buy-now"
             title="Buy now"
@@ -34,6 +25,7 @@
             type="submit"
             value="Buy now"
             aria-labelledby="submit.buy-now-announce"
+            (click)="addToCart(product)"
           />
         </div>
       </div>

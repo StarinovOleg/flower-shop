@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { Product } from '../product';
+import { Product } from '../services/product';
 
-import { productsService } from '../products.service';
-
+import { productsService } from '../services/products.service';
+import { CartService } from '../services/cart-services/cart.service';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -14,8 +14,9 @@ export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;
   constructor(
     private route: ActivatedRoute,
-     private router: Router,
+    private router: Router,
     private productsService: productsService,
+    private CartService: CartService,
   ) { }
   ngOnInit(): void {
     const id =Number(this.route.snapshot.paramMap.get('id'));
@@ -30,6 +31,10 @@ export class ProductDetailsComponent implements OnInit {
          next:product => (this.product=product)
       }
       ) 
-
+  }
+  addToCart(product: Product) {
+    this.CartService.addToCart(product);
+    this.router.navigate([ '/shop-cards' ])
+    //window.alert('Flower has been added tp the cart')
   }
 }
