@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart-services/cart.service';
-import { productsService } from '../services/products.service';
 
 import { Product } from '../services/product';
 @Component({
@@ -13,15 +12,13 @@ export class CartComponent implements OnInit {
   
   constructor(
     private CartService: CartService,
-    private productsService: productsService,
   ) { }
 
   ngOnInit(): void {
     
   }
-  clearCart(product: Product) {
+  clearCart(item: Product) {
     this.CartService.clearCart();
-    
     //window.alert('Flower has been added tp the cart')
   }
 }

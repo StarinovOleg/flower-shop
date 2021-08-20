@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit {
       if (id) {
       this.getAll(id);
     }
-    console.log( id) 
+
 
   }
     getAll(id: number): void {
