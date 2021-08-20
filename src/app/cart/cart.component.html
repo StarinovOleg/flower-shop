@@ -44,19 +44,19 @@
       </div>
           <div class="col-lg-6 col-12">
          <div class="cart-form" *ngIf="items.length>0" >
-          <form >
+          <form [formGroup]="form">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Enter name">
+              <input type="text" class="form-control" id="name"  formControlName="name"  placeholder="Enter name">
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="phone" class="form-control" id="phone" placeholder="Phone" required>
+              <input type="number" class="form-control" id="phone" formControlName="phone"  placeholder="Phone">
               <small id="phoneHelp" class="form-text text-muted">We'll never share your phone with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="address">Address delivery</label>
-              <input type="address" class="form-control" id="address" aria-describedby="address" placeholder="Enter address" required>
+              <input type="text" class="form-control" id="address" aria-describedby="address" formControlName="address"  placeholder="Enter address">
             </div>
             <button 
               type="button"          
@@ -64,7 +64,9 @@
               title="Order form"
               class="btn btn-secondary a-button-input"
               value="Order now"
-              (click)="onSubmit()">Buy and delivery
+              (click)="onSubmit()"
+              [disabled]="!form.valid"
+              >Buy and delivery
             </button>
           </form>
         </div>
