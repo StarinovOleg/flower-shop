@@ -9,7 +9,8 @@ import { Product } from '../services/product';
 })
 export class CartComponent implements OnInit {
   items=this.CartService.getItems();
-
+  result: string | undefined;
+  empty="Here will all your orders";
   constructor(
     private CartService: CartService,
   ) { }
@@ -20,5 +21,11 @@ export class CartComponent implements OnInit {
   clearCart(item: Product) {
     this.CartService.clearCart();
   }
-  
+    onSubmit(): void {
+    // Process checkout data here
+    this.CartService.clearCart(); 
+    this.result="success";
+    this.empty="";
+    console.log(this.result);
+  }
 }
