@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 //import { products } from '../products';
 
-import { Product } from '../services/product';
+import { Product } from '../models/product';
 import { productsService } from '../services/products.service';
 @Component({
-  selector: 'app-shop-cards',
-  templateUrl: './shop-cards.component.html',
-  styleUrls: ['./shop-cards.component.scss'],
+  selector: 'app-product-catalog',
+  templateUrl: './product-catalog.component.html',
+  styleUrls: ['./product-catalog.component.scss'],
 })
-export class ShopCardsComponent implements OnInit {
+export class ProductCatalogComponent implements OnInit {
   //products = products;
   product: Product[] = [];
   constructor(private productsService: productsService) {}
@@ -17,8 +17,8 @@ export class ShopCardsComponent implements OnInit {
     this.getProducts();
   }
   getProducts(): void {
-      this.productsService.getAlls()
-    .subscribe(product => this.product = product);
-   
+    this.productsService
+      .getAlls()
+      .subscribe((product) => (this.product = product));
   }
 }
