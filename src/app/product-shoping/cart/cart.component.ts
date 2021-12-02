@@ -7,7 +7,11 @@ import {
   FormControl,
 } from '@angular/forms';
 import { Product } from '../../models/product';
-
+export class Customer {
+  name: string | undefined;
+  phone: string | undefined;
+  adress: string | undefined;
+}
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -17,6 +21,7 @@ export class CartComponent implements OnInit {
   items = this.CartService.getItems();
   result: string | undefined;
   empty = 'Here will all your orders';
+  customer: Customer = new Customer();
   form!: FormGroup;
   constructor(
     private CartService: CartService,
@@ -46,5 +51,6 @@ export class CartComponent implements OnInit {
     this.CartService.clearCart();
     this.result = 'success';
     this.empty = '';
+    console.log(this.customer);
   }
 }

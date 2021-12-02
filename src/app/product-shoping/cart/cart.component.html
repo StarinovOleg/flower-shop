@@ -48,24 +48,24 @@
       </div>
       <div class="col-lg-6 col-12">
         <div class="cart-form" *ngIf="items.length > 0">
-          <form [formGroup]="form">
+          <form>
             <div class="form-group">
               <label for="name">Name</label>
               <input
                 type="text"
                 class="form-control"
                 id="name"
-                formControlName="name"
                 name="name"
                 placeholder="Enter name"
+                [(ngModel)]="customer.name"
+                #name="ngModel"
+                required
               />
               <div
+                [hidden]="name.valid || name.untouched"
                 class="alert alert-danger"
-                *ngIf="
-                  form.controls['name'].invalid && form.controls['name'].touched
-                "
               >
-                Here should be name
+                No name
               </div>
             </div>
             <div class="form-group">
@@ -75,41 +75,49 @@
                 class="form-control"
                 id="phone"
                 name="phone"
-                formControlName="phone"
                 placeholder="Phone"
+                [(ngModel)]="customer.phone"
+                #phone="ngModel"
+                required
+                pattern="[0-9]{10}"
               />
               <small id="phoneHelp" class="form-text text-muted"
                 >We'll never share your phone with anyone else.</small
               >
+              <div
+                [hidden]="phone.valid || phone.untouched"
+                class="alert alert-danger"
+              >
+                No correct phone
+              </div>
             </div>
             <div class="form-group">
               <label for="address">Address delivery</label>
               <input
                 type="text"
                 class="form-control"
-                id="address"
+                id="adress"
                 name="adress"
-                aria-describedby="address"
-                formControlName="address"
-                placeholder="Enter address"
+                aria-describedby="adress"
+                placeholder="Enter adress"
+                [(ngModel)]="customer.adress"
+                #adress="ngModel"
+                required
               />
               <div
+                [hidden]="adress.valid || adress.untouched"
                 class="alert alert-danger"
-                *ngIf="
-                  form.controls['name'].invalid && form.controls['name'].touched
-                "
               >
-                Here should be name
+                No adress
               </div>
             </div>
             <button
-              type="button"
               name="order-form"
               title="Order form"
               class="btn btn-secondary a-button-input"
               value="Order now"
               (click)="onSubmit()"
-              [disabled]="!form.valid"
+              [disabled]="name.invalid || adress.invalid || phone.invalid"
             >
               Buy and delivery
             </button>
