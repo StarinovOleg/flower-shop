@@ -20,6 +20,7 @@ import { CartComponent } from './product-shoping/cart/cart.component';
 import { AboutComponent } from './product-section/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
