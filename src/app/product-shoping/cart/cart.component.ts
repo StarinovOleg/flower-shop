@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { CustomerService } from '../../services/customer.service';
 import {
   FormGroup,
   FormBuilder,
@@ -25,16 +26,9 @@ export class CartComponent implements OnInit {
   form!: FormGroup;
   constructor(
     private CartService: CartService,
+    private CustomerService: CustomerService,
     private formBuilder: FormBuilder
-  ) {
-    this.form = new FormGroup({
-      name: new FormControl('Tom', Validators.required),
-      email: new FormControl('', [
-        Validators.required,
-        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}'),
-      ]),
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -42,11 +36,12 @@ export class CartComponent implements OnInit {
       phone: [null, Validators.required],
       address: [null, Validators.required],
     });
+    console.log(this.items);
   }
   clearCart(item: Product) {
     this.CartService.clearCart();
   }
-  onSubmit(): void {
+  onSubmit(items: any): void {
     // Process checkout data here
     this.CartService.clearCart();
     this.result = 'success';
