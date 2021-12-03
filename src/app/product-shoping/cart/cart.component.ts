@@ -13,6 +13,7 @@ export class Customer {
   phone: string | undefined;
   adress: string | undefined;
 }
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -27,7 +28,8 @@ export class CartComponent implements OnInit {
   constructor(
     private CartService: CartService,
     private CustomerService: CustomerService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -41,11 +43,19 @@ export class CartComponent implements OnInit {
   clearCart(item: Product) {
     this.CartService.clearCart();
   }
-  onSubmit(items: any): void {
+  onSubmit(name: string): void {
     // Process checkout data here
+
     this.CartService.clearCart();
     this.result = 'success';
     this.empty = '';
+
+    this.http
+      .post('http://192.168.64.2/flowershop-API/api-customer.php', Customer)
+      .subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      );
     console.log(this.customer);
   }
 }
