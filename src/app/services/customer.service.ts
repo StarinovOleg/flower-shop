@@ -9,11 +9,7 @@ import { Observable, of } from 'rxjs';
 export class CustomerService {
   constructor(private http: HttpClient) {}
   private customerUrl = 'http://192.168.64.2/flowershop-API/api-customer.php';
-  addCustomers(customer: Customer) {
-    return this.http.post<Customer>(this.customerUrl, customer).pipe(
-      map((response) => {
-        return response;
-      })
-    );
+  addCustomer(customer: Customer): Observable<any> {
+    return this.http.post(this.customerUrl, 'customer');
   }
 }

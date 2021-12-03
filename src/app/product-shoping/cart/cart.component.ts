@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { CustomerService } from '../../services/customer.service';
+import { Customer } from '../../models/customer';
 import {
   FormGroup,
   FormBuilder,
@@ -8,11 +9,7 @@ import {
   FormControl,
 } from '@angular/forms';
 import { Product } from '../../models/product';
-export class Customer {
-  name: string | undefined;
-  phone: string | undefined;
-  adress: string | undefined;
-}
+
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-cart',
@@ -49,13 +46,16 @@ export class CartComponent implements OnInit {
     this.CartService.clearCart();
     this.result = 'success';
     this.empty = '';
-
+    this.CustomerService.addCustomer(this.customer).subscribe((data) => {
+      console.log(data);
+    });
+    /*
     this.http
       .post('http://192.168.64.2/flowershop-API/api-customer.php', Customer)
       .subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
-      );
+      );*/
     console.log(this.customer);
   }
 }
