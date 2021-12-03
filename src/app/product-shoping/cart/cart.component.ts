@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
   clearCart(item: Product) {
     this.CartService.clearCart();
   }
-  onSubmit(name: string): void {
+  onSubmit(): void {
     // Process checkout data here
 
     this.CartService.clearCart();
