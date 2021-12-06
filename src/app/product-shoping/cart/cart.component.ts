@@ -49,13 +49,7 @@ export class CartComponent implements OnInit {
     this.CustomerService.addCustomer(this.customer).subscribe((data) => {
       console.log(data);
     });
-    /*
-    this.http
-      .post('http://192.168.64.2/flowershop-API/api-customer.php', Customer)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );*/
+
     console.log(this.customer);
   }
 }
