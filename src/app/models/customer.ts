@@ -3,7 +3,7 @@ export interface Customer {
   name?: string;
   adress?: string;
   phone?: string;
-  cart?: number;
+  cart?: string;
 }
 export class Customer implements Customer {
   constructor(
@@ -11,6 +11,6 @@ export class Customer implements Customer {
     public name?: string,
     public adress?: string,
     public phone?: string,
-    public cart?: number
+    public cart?: string
   ) {}
 }
