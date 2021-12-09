@@ -21,6 +21,8 @@ import { AboutComponent } from './shop/product-section/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShopCmsModule } from './shop-cms/shop-cms.module';
+import { ShopCmsAddModule } from './shop-cms/shop-cms-add/shop-cms-add.module';
+import { ShopCmsReadModule } from './shop-cms/shop-cms-read/shop-cms-read.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { ShopCmsModule } from './shop-cms/shop-cms.module';
     MatIconModule,
     NgbModule,
     ShopCmsModule,
-    RouterModule.forRoot([
+    ShopCmsAddModule,
+    ShopCmsReadModule,
+    RouterModule.forChild([
       { path: 'product-catalog', component: ProductCatalogComponent },
       { path: 'news', component: NewsComponent },
       { path: 'product/:id', component: ProductDetailsComponent },
@@ -57,6 +61,28 @@ import { ShopCmsModule } from './shop-cms/shop-cms.module';
       { path: 'coming-soon', component: ComingSoonComponent },
       { path: 'cart', component: CartComponent },
       { path: 'about', component: AboutComponent },
+      {
+        path: 'shop-cms',
+        pathMatch: 'prefix',
+        loadChildren: () =>
+          import('./shop-cms/shop-cms.module').then((m) => m.ShopCmsModule),
+      },
+      {
+        path: 'shop-cms-read',
+        pathMatch: 'prefix',
+        loadChildren: () =>
+          import('./shop-cms/shop-cms-read/shop-cms-read.module').then(
+            (m) => m.ShopCmsReadModule
+          ),
+      },
+      {
+        path: 'shop-cms-add',
+        pathMatch: 'prefix',
+        loadChildren: () =>
+          import('./shop-cms/shop-cms-add/shop-cms-add.module').then(
+            (m) => m.ShopCmsAddModule
+          ),
+      },
     ]),
   ],
   exports: [RouterModule],
