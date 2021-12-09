@@ -19,6 +19,6 @@ export class AppComponent {
     this.showStepperComp = value;
   }
   isHomeRoute() {
-    return this.router.url === '/shop-cms';
+    return this.router.url.includes('/shop-cms');
   }
 }
