@@ -29,30 +29,6 @@ import { ShopModule } from './shop/shop.module';
     ShopCmsAddModule,
     ShopCmsReadModule,
     ShopModule,
-    RouterModule.forChild([
-      {
-        path: 'shop-cms',
-        pathMatch: 'prefix',
-        loadChildren: () =>
-          import('./shop-cms/shop-cms.module').then((m) => m.ShopCmsModule),
-      },
-      {
-        path: 'shop-cms-read',
-        pathMatch: 'prefix',
-        loadChildren: () =>
-          import('./shop-cms/shop-cms-read/shop-cms-read.module').then(
-            (m) => m.ShopCmsReadModule
-          ),
-      },
-      {
-        path: 'shop-cms-add',
-        pathMatch: 'prefix',
-        loadChildren: () =>
-          import('./shop-cms/shop-cms-add/shop-cms-add.module').then(
-            (m) => m.ShopCmsAddModule
-          ),
-      },
-    ]),
   ],
   exports: [RouterModule],
   providers: [],
