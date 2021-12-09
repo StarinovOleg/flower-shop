@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,16 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Hoa Tươi Mai Phương';
-  public constructor(private titleService: Title, private router: Router) {}
-  public setTitle(newTitle: string) {
-    this.titleService.setTitle(newTitle);
-  }
-  showStepperComp: boolean = true;
+  constructor(private router: Router) {}
 
-  showHideStepperComp(value: any) {
-    this.showStepperComp = value;
-  }
   isHomeRoute() {
     return this.router.url.includes('/shop-cms');
   }
