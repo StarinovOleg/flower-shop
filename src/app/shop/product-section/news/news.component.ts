@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { newsItems } from '../../news-items';
-import { newsSliders } from '../../news-sliders';
-import { newsReviews } from '../../news-reviews';
+import { newsItems } from '../../../news-items';
+import { newsSliders } from '../../../news-sliders';
+import { newsReviews } from '../../../news-reviews';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
