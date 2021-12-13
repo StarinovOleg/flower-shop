@@ -12,6 +12,7 @@ import { ShopCmsModule } from './shop-cms/shop-cms.module';
 import { ShopCmsAddModule } from './shop-cms/shop-cms-add/shop-cms-add.module';
 import { ShopCmsReadModule } from './shop-cms/shop-cms-read/shop-cms-read.module';
 import { ShopModule } from './shop/shop.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ShopModule } from './shop/shop.module';
     ShopCmsAddModule,
     ShopCmsReadModule,
     ShopModule,
+    ReactiveFormsModule,
   ],
   exports: [RouterModule],
   providers: [],

@@ -48,7 +48,7 @@
       </div>
       <div class="col-lg-6 col-12">
         <div class="cart-form" *ngIf="items.length > 0">
-          <form>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="name">Name</label>
               <input
@@ -57,13 +57,12 @@
                 id="name"
                 name="name"
                 placeholder="Enter name"
+                formControlName="name"
                 [(ngModel)]="customer.name"
-                #name="ngModel"
-                required
               />
               <div
-                [hidden]="name.valid || name.untouched"
-                class="alert alert-danger"
+                *ngIf="form.get('name')!.invalid && form.get('name')?.touched"
+                class="alert alert-danger validation"
               >
                 No name
               </div>
@@ -76,19 +75,17 @@
                 id="phone"
                 name="phone"
                 placeholder="Phone"
+                formControlName="phone"
                 [(ngModel)]="customer.phone"
-                #phone="ngModel"
-                required
-                pattern="[0-9]{10}"
               />
               <small id="phoneHelp" class="form-text text-muted"
                 >We'll never share your phone with anyone else.</small
               >
               <div
-                [hidden]="phone.valid || phone.untouched"
-                class="alert alert-danger"
+                *ngIf="form.get('phone')!.invalid && form.get('phone')?.touched"
+                class="alert alert-danger validation"
               >
-                No correct phone
+                <div>Need use format 1234567890</div>
               </div>
             </div>
             <div class="form-group">
@@ -100,13 +97,14 @@
                 name="adress"
                 aria-describedby="adress"
                 placeholder="Enter adress"
+                formControlName="adress"
                 [(ngModel)]="customer.adress"
-                #adress="ngModel"
-                required
               />
               <div
-                [hidden]="adress.valid || adress.untouched"
-                class="alert alert-danger"
+                *ngIf="
+                  form.get('adress')!.invalid && form.get('adress')?.touched
+                "
+                class="alert alert-danger validation"
               >
                 No adress
               </div>
@@ -116,8 +114,8 @@
               title="Order form"
               class="btn btn-secondary a-button-input"
               value="Order now"
-              (click)="onSubmit()"
-              [disabled]="name.invalid || adress.invalid || phone.invalid"
+              type="submit"
+              [disabled]="form.invalid"
             >
               Buy and delivery
             </button>

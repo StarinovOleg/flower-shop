@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './product-shoping/cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatIconModule,
     FormsModule,
+    BrowserModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'shop', pathMatch: 'full', component: ShopComponent },
