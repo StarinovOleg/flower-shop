@@ -18,14 +18,6 @@ const routes: Routes = [
   { path: 'coming-soon', component: ComingSoonComponent },
   { path: 'product/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'shop-cms', component: ShopCmsComponent },
-
-  {
-    path: 'shop-cms',
-    pathMatch: 'prefix',
-    loadChildren: () =>
-      import('./shop-cms/shop-cms.module').then((m) => m.ShopCmsModule),
-  },
 ];
 
 @NgModule({
