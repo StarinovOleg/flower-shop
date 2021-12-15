@@ -1,5 +1,6 @@
 <app-header-world-order *ngIf="!isHomeRoute()"></app-header-world-order>
 <app-header *ngIf="!isHomeRoute()"></app-header>
+<app-cms-header *ngIf="isHomeRoute()"></app-cms-header>
 <!--<app-promo></app-promo>
   <app-news></app-news>-->
 <router-outlet></router-outlet>

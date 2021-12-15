@@ -9,15 +9,16 @@ import { FooterComponent } from './main-layout/footer/footer.component';
 import { HeaderWorldOrderComponent } from './main-layout/header-world-order/header-world-order.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopCmsModule } from './shop-cms/shop-cms.module';
-import { ShopCmsAddModule } from './shop-cms/shop-cms-add/shop-cms-add.module';
-import { ShopCmsReadModule } from './shop-cms/shop-cms-read/shop-cms-read.module';
+
 import { ShopModule } from './shop/shop.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CmsHeaderComponent } from './shop-cms/shop-cms-common/cms-header/cms-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    CmsHeaderComponent,
     FooterComponent,
     HeaderWorldOrderComponent,
   ],
@@ -27,8 +28,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     ShopCmsModule,
-    ShopCmsAddModule,
-    ShopCmsReadModule,
     ShopModule,
     ReactiveFormsModule,
   ],

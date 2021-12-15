@@ -5,12 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ShopCmsReadModule } from './shop-cms-read/shop-cms-read.module';
 import { ShopCmsAddModule } from './shop-cms-add/shop-cms-add.module';
-import { ShopCmsReadComponent } from './shop-cms-read/shop-cms-read.component';
-import { ShopCmsAddComponent } from './shop-cms-add/shop-cms-add.component';
 import { CmsHeaderComponent } from './shop-cms-common/cms-header/cms-header.component';
 
 @NgModule({
-  declarations: [ShopCmsComponent, CmsHeaderComponent],
+  declarations: [ShopCmsComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,16 +16,28 @@ import { CmsHeaderComponent } from './shop-cms-common/cms-header/cms-header.comp
     ShopCmsAddModule,
 
     RouterModule.forChild([
-      { path: 'shop-cms', pathMatch: 'full', component: ShopCmsComponent },
       {
-        path: 'shop-cms-read',
+        path: 'shop-cms',
+        component: ShopCmsComponent,
         pathMatch: 'full',
-        component: ShopCmsReadComponent,
-      },
-      {
-        path: 'shop-cms-add',
-        pathMatch: 'full',
-        component: ShopCmsAddComponent,
+        children: [
+          {
+            path: 'shop-cms-read',
+            pathMatch: 'prefix',
+            loadChildren: () =>
+              import('./shop-cms-read/shop-cms-read.module').then(
+                (m) => m.ShopCmsReadModule
+              ),
+          },
+          {
+            path: 'shop-cms-add',
+            pathMatch: 'prefix',
+            loadChildren: () =>
+              import('./shop-cms-add/shop-cms-add.module').then(
+                (m) => m.ShopCmsAddModule
+              ),
+          },
+        ],
       },
     ]),
   ],

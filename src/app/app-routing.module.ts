@@ -7,8 +7,6 @@ import { NewsComponent } from './shop/product-section/news/news.component';
 import { ShopComponent } from './shop/shop.component';
 import { ProductDetailsComponent } from './shop/product-details/product-details.component';
 import { CartComponent } from './shop/product-shoping/cart/cart.component';
-import { ShopCmsComponent } from './shop-cms/shop-cms.component';
-import { ShopCmsReadComponent } from './shop-cms/shop-cms-read/shop-cms-read.component';
 
 const routes: Routes = [
   { path: '', component: ShopComponent },
