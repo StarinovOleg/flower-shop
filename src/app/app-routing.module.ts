@@ -7,6 +7,7 @@ import { NewsComponent } from './shop/product-section/news/news.component';
 import { ShopComponent } from './shop/shop.component';
 import { ProductDetailsComponent } from './shop/product-details/product-details.component';
 import { CartComponent } from './shop/product-shoping/cart/cart.component';
+import { ProductCatalogComponent } from './shop/product-catalog/product-catalog.component';
 
 const routes: Routes = [
   { path: '', component: ShopComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'coming-soon', component: ComingSoonComponent },
   { path: 'product/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
+  // { path: 'product-catalog', component: CartComponent },
 ];
 
 @NgModule({

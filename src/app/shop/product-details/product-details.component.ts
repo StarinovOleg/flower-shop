@@ -31,7 +31,7 @@ export class ProductDetailsComponent implements OnInit {
   }
   addToCart(product: Product) {
     this.CartService.addToCart(product);
-    this.router.navigate(['/product-catalog']);
+    this.router.navigate(['']);
     //window.alert('Flower has been added tp the cart')
   }
 }
