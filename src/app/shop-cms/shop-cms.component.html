@@ -1,7 +1,42 @@
-<p>shop-cms works!</p>
-<a class="nav-link" routerLink="/shop-cms-read" routerLinkActive="active"
-  >CMS-READ</a
->
-<a class="nav-link" routerLink="/shop-cms-add" routerLinkActive="active"
-  >CMS-ADD</a
->
+<app-cms-header></app-cms-header>
+<router-outlet></router-outlet>
+<div class="chose-panel">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <div class="position-center">
+          <a
+            class="nav-link"
+            routerLink="/shop-cms-read"
+            routerLinkActive="active"
+          >
+            <div class="item">
+              <div class="item-title text-center">
+                <i class="far fa-address-card item-icon"></i>
+                <h3 class="item-text-title">Khách hàng</h3>
+              </div>
+              <p class="item-body">để xem khách hàng</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="position-center">
+          <a
+            class="nav-link"
+            routerLink="/shop-cms-add"
+            routerLinkActive="active"
+          >
+            <div class="item">
+              <div class="item-title text-center">
+                <i class="fas fa-shopping-bag icon-title item-icon"></i>
+                <h3 class="item-text-title">Cửa tiệm</h3>
+              </div>
+              <p class="item-body">tải sản phẩm lên trang web</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

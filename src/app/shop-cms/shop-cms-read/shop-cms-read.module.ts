@@ -5,16 +5,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ShopCmsReadComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild([
-      {
-        path: 'shop-cms-read',
-        pathMatch: 'full',
-        component: ShopCmsReadComponent,
-      },
-    ]),
-  ],
+  imports: [CommonModule, RouterModule],
   exports: [ShopCmsReadComponent],
 })
 export class ShopCmsReadModule {}

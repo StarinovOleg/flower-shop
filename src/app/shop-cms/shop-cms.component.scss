@@ -1,0 +1,26 @@
+
+.chose-panel {
+  .position-center {
+    margin-top: 50%;
+  }
+
+  .item {
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #a40001;
+    padding: 2%;
+    color: #a40001;
+    h3 {
+      font-size: 1.5rem;
+    }
+    p {
+      font: size 1rem;
+    }
+    .item-icon {
+      font-size: 10rem;
+    }
+    .item-text-title {
+      margin-top: 2%;
+    }
+  }
+}
