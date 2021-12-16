@@ -18,10 +18,10 @@
             <th scope="col">Gọi món</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let customerDisplay of customerDisplay">
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
+            <td>{{ customerDisplay.name }}</td>
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
