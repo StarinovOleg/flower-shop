@@ -69,11 +69,14 @@
             >
             <input
               type="file"
-              class="form-control-file"
-              id="picture-file"
-              name="image"
+              class="form-control-file file-input"
+              id="fileUpload"
+              name="fileUpload"
               formControlName="image"
               [(ngModel)]="productAdd.image"
+              #fileUpload
+              multiple="multiple"
+              accept="http:\\192.168.64.2/floweshop-STORAGE/image/*"
             />
           </div>
           <div
