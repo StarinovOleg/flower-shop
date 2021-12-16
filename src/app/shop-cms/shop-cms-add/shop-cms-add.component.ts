@@ -31,7 +31,8 @@ export class ShopCmsAddComponent implements OnInit {
     this.ProductAddService.addProduct(this.productAdd).subscribe((data) => {
       console.log(data);
     });
-
-    console.log(this.productAdd);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
 }
