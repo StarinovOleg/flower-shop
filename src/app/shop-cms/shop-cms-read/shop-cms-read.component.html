@@ -18,27 +18,13 @@
             <th scope="col">Gọi món</th>
           </tr>
         </thead>
-        <tbody *ngFor="let customerDisplay of customerDisplay">
+        <tbody *ngFor="let customerDisplay of customerDisplay; let i = index">
           <tr>
-            <th scope="row">1</th>
+            <th scope="row">{{ i + 1 }}</th>
             <td>{{ customerDisplay.name }}</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>@fat</td>
+            <td>{{ customerDisplay.adress }}</td>
+            <td>{{ customerDisplay.phone }}</td>
+            <td>{{ customerDisplay.cart }}</td>
           </tr>
         </tbody>
       </table>

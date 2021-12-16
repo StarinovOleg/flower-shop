@@ -16,8 +16,6 @@ export class ShopCmsReadComponent implements OnInit {
   getCustomers(): void {
     this.customerDisplayService
       .getAlls()
-      .subscribe(
-        (customerDisplay) => (this.customerDisplay = this.customerDisplay)
-      );
+      .subscribe((customerDisplay) => (this.customerDisplay = customerDisplay));
   }
 }
