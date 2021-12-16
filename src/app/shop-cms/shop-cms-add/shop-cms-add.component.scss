@@ -18,3 +18,10 @@
 .color-border {
   border: 1px solid #a40001;
 }
+
+input.ng-touched.ng-invalid {
+  border: solid red 2px;
+}
+input.ng-touched.ng-valid {
+  border: solid green 2px;
+}

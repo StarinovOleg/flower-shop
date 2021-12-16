@@ -24,6 +24,12 @@ export class ShopCmsAddComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       name: new FormControl('', Validators.required),
+      price: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[0-9]'),
+      ]),
+      description: new FormControl('', Validators.required),
+      image: new FormControl(''),
     });
   }
   onSubmit(): void {

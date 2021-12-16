@@ -15,17 +15,30 @@
               formControlName="name"
               [(ngModel)]="productAdd.name"
             />
+            <div
+              *ngIf="form.get('name')!.invalid && form.get('name')?.touched"
+              class="alert alert-danger validation"
+            >
+              No name
+            </div>
           </div>
           <div class="form-group">
             <label for="price" class="subtitle-input-label">Price</label>
             <input
+              type="number"
               class="form-control color-border"
               id="price"
               name="price"
               placeholder="price"
-              formControlName="name"
+              formControlName="price"
               [(ngModel)]="productAdd.price"
             />
+            <div
+              *ngIf="form.get('price')!.invalid && form.get('price')?.touched"
+              class="alert alert-danger validation"
+            >
+              No price
+            </div>
           </div>
           <div class="form-group">
             <label for="description" class="subtitle-input-label"
@@ -36,11 +49,20 @@
               id="description"
               rows="3"
               name="description"
-              formControlName="name"
+              formControlName="description"
               [(ngModel)]="productAdd.description"
             ></textarea>
+            <div
+              *ngIf="
+                form.get('description')!.invalid &&
+                form.get('description')?.touched
+              "
+              class="alert alert-danger validation"
+            >
+              No description
+            </div>
           </div>
-          <!--
+
           <div class="form-group">
             <label for="picture-file" class="subtitle-input-label"
               >Chose picture</label
@@ -50,10 +72,10 @@
               class="form-control-file"
               id="picture-file"
               name="image"
-              formControlName="name"
+              formControlName="image"
               [(ngModel)]="productAdd.image"
             />
-          </div>-->
+          </div>
           <div
             class="success"
             style="color: red; font-size: 2rem; padding-bottom: 1rem"
