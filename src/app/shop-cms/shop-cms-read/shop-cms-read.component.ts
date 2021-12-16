@@ -18,4 +18,7 @@ export class ShopCmsReadComponent implements OnInit {
       .getAlls()
       .subscribe((customerDisplay) => (this.customerDisplay = customerDisplay));
   }
+  reloadPage() {
+    window.location.reload();
+  }
 }
