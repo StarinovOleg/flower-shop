@@ -10,9 +10,6 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-import { FileUploadService } from '../services/file-upload.service';
-import { ReactiveFormsModule } from '@angular/forms';
-import { faFileUpload } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-shop-cms-add',
@@ -20,10 +17,7 @@ import { faFileUpload } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./shop-cms-add.component.scss'],
 })
 export class ShopCmsAddComponent implements OnInit {
-  constructor(
-    private ProductAddService: ProductAddService,
-    private FileUploadService: FileUploadService
-  ) {}
+  constructor(private ProductAddService: ProductAddService) {}
   productAdd: ProductAdd = new ProductAdd();
   form!: FormGroup;
   result: string | undefined;
@@ -36,14 +30,18 @@ export class ShopCmsAddComponent implements OnInit {
       image: new FormControl(''),
     });
   }
-  onSubmit(): void {
-    this.result = 'success';
 
-    this.ProductAddService.addProduct(this.productAdd).subscribe((data) => {
-      console.log(data);
-    });
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
+  onSubmit(): void {
+    if (this.form.valid) {
+      this.result = 'success';
+
+      this.ProductAddService.addProduct(this.productAdd).subscribe((data) => {
+        console.log(data);
+      });
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
   }
 }

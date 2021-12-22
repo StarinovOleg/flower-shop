@@ -3,7 +3,12 @@
     <div class="col-lg-12 col12">
       <div class="add-container">
         <h3 class="title">Add product data</h3>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          enctype="multipart/form-data"
+          method="post"
+        >
           <div class="form-group">
             <label for="name" class="subtitle-input-label">Name product</label>
             <input
@@ -70,13 +75,11 @@
             <input
               type="file"
               class="form-control-file file-input"
-              id="fileUpload"
-              name="fileUpload"
+              id="image"
+              name="image"
               formControlName="image"
               [(ngModel)]="productAdd.image"
               #fileUpload
-              multiple="multiple"
-              accept="http:\\192.168.64.2/floweshop-STORAGE/image/*"
             />
           </div>
           <div
@@ -86,7 +89,16 @@
             {{ result }}
           </div>
 
-          <button type="submit" class="btn head-block">Submit</button>
+          <button
+            type="submit"
+            class="btn head-block"
+            id="submit"
+            name="submit"
+            value="submit"
+            [disabled]="form.invalid"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
